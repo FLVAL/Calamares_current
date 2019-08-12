@@ -11,7 +11,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
-import requests
+#import requests
 
 from pathlib import Path
 from libcalamares import *
