@@ -351,9 +351,11 @@ def run():
     COPY_CMD = "cp -f"
     CLEANER_SCRIPT = "/usr/bin/cleaner_script.sh"
     PACMAN_CONF = "/etc/pacman.conf"
+    PACMAN_MIRRORS = "/etc/pacman.d/mirrorlist"
     OS_RELEASE = "/etc/os-release"
     DEST_BIN = "/usr/bin"
     DEST_ETC = "/etc"
+    DEST_MIRRORS = "/etc/pacman.d"
     GRUB_CONF = "/etc/default/grub"
     DEST_GRUB = "/etc/default"
 
@@ -366,3 +368,5 @@ def run():
     subprocess.call(COPY_CMD.split(' ') + [OS_RELEASE] + [root_mount_point + DEST_ETC])
 
     subprocess.call(COPY_CMD.split(' ') + [GRUB_CONF] + [root_mount_point + DEST_GRUB])
+
+    subprocess.call(COPY_CMD.split(' ') + [PACMAN_MIRRORS] + [root_mount_point + DEST_MIRRORS])
